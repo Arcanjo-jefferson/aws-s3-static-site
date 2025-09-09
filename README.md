@@ -1,4 +1,4 @@
-# AWS S3 Static Website (Free Tier)
+# AWS S3 Static Website 
 
 This project demonstrates hosting a static website on **Amazon S3** and later automating deployment with **GitHub Actions**.
 
@@ -38,7 +38,7 @@ It was later enhanced with a **CI/CD pipeline** that automatically syncs changes
 ---
 
 ## 🗂 Project Structure
-aws-s3-static-site/
+```aws-s3-static-site/
 ├── website/ # Static site files
 │ ├── index.html
 │ └── style.css
@@ -47,7 +47,7 @@ aws-s3-static-site/
 │ └── deploy.yml # GitHub Actions workflow
 ├── .gitignore
 └── README.md
-
+```
 
 > **Note:**  
 > Only the contents of the `website/` folder are deployed to AWS S3.
@@ -77,7 +77,7 @@ The deployment workflow is fully automated:
 ### Workflow File: `.github/workflows/deploy.yml`
 
 
-👤 Author
+👤 Author:
 Jefferson Arcanjo
 Github: Arcanjo-jefferson
 Linkedln: https://www.linkedin.com/in/jeffersonarcanjo/
