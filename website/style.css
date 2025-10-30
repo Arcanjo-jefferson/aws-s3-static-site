@@ -1,19 +1,170 @@
-html,body {
+/* Font and global reset */
+* {
   margin: 0;
   padding: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  box-sizing: border-box;
 }
 
-main {
-  max-width: 720px;
-  margin: 8vh auto;
-  padding: 24px;
-}
-
-h1 {
-  margin: 0 0 12px;
-}
-
-p {
+body {
+  font-family: 'Poppins', sans-serif;
   line-height: 1.6;
+  color: #222;
+  background-color: #f5f6fa;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, #1e90ff, #00b894);
+  color: white;
+  text-align: center;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5em;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #fff;
+  color: #1e90ff;
+  padding: 0.75em 1.5em;
+  border-radius: 30px;
+  font-weight: 600;
+  margin-top: 1em;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #00b894;
+  color: #fff;
+}
+
+/* Sections */
+.section {
+  padding: 4em 2em;
+  text-align: center;
+  background: #fff;
+}
+
+.section.alt {
+  background: #f0f2f5;
+}
+
+.section h2 {
+  color: #1e90ff;
+  margin-bottom: 1em;
+}
+
+.section p {
+  max-width: 800px;
+  margin: 0 auto 2em;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2em;
+  margin-top: 2em;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 2em 1.5em;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card img {
+  width: 60px;
+  margin-bottom: 1em;
+}
+
+.card h3 {
+  color: #00b894;
+  margin-bottom: 0.5em;
+}
+
+/* Pipeline List */
+ol {
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Tech List */
+.tech-list {
+  list-style: none;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tech-list li {
+  background: #e8f8f5;
+  margin: 0.5em 0;
+  padding: 0.8em;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* Author Section */
+.profile {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 1em;
+}
+
+.links a {
+  display: inline-block;
+  margin: 0.5em;
+  padding: 0.6em 1.2em;
+  border: 2px solid #1e90ff;
+  color: #1e90ff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.links a:hover {
+  background: #1e90ff;
+  color: white;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5em;
+  background: #1e90ff;
+  color: white;
 }

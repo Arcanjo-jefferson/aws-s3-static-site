@@ -1,16 +1,90 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>My AWS S3 Static Site</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AWS S3 Static Website with CI/CD | Jefferson Arcanjo</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>🚀 AWS S3 Static Website with CI/CD</h1>
+      <p>Created by <strong>Jefferson Arcanjo</strong></p>
+      <a href="#project" class="btn">Explore Project</a>
+    </div>
+  </header>
+
   <main>
-    <h1>Deployed on AWS S3 Version 2🎉</h1>
-    <p>Hello from my first cloud project using the Free Tier.</p>
-    <p>Built by: <strong>Jefferson Ramos Sena Arcanjo</strong></p>
+    <section id="project" class="section">
+      <h2>About the Project</h2>
+      <p>
+        This project demonstrates how to host and automate deployments of a static website on
+        <strong>Amazon S3</strong> using <strong>GitHub Actions</strong>.
+        Every time I push an update to GitHub, the website is automatically redeployed to AWS —
+        no manual uploads required.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968381.png" alt="AWS S3" />
+          <h3>Amazon S3</h3>
+          <p>Used for reliable, scalable static website hosting in the AWS Cloud.</p>
+        </div>
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png" alt="GitHub" />
+          <h3>GitHub Actions</h3>
+          <p>Implements a CI/CD pipeline that automatically syncs updates from GitHub to S3.</p>
+        </div>
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/906/906343.png" alt="Security" />
+          <h3>Secure Setup</h3>
+          <p>IAM user credentials stored in GitHub Secrets — following AWS security best practices.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pipeline" class="section alt">
+      <h2>How the CI/CD Pipeline Works</h2>
+      <ol>
+        <li>💻 Code changes are pushed to the <strong>main</strong> branch on GitHub.</li>
+        <li>⚙️ GitHub Actions triggers a workflow that logs into AWS via IAM credentials.</li>
+        <li>☁️ Files from the <code>website/</code> folder are synced to the S3 bucket.</li>
+        <li>🌍 The new version of the website goes live automatically.</li>
+      </ol>
+    </section>
+
+    <section id="technologies" class="section">
+      <h2>Technologies Used</h2>
+      <ul class="tech-list">
+        <li>Amazon Web Services (S3, IAM)</li>
+        <li>GitHub Actions</li>
+        <li>HTML & CSS</li>
+        <li>AWS CLI</li>
+        <li>Cloud Security Best Practices</li>
+      </ul>
+    </section>
+
+    <section id="author" class="section alt">
+      <h2>About the Author</h2>
+      <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="GitHub Logo" class="profile" />
+      <p>
+        Hi, I’m <strong>Jefferson Arcanjo</strong> — a Computing & IT student passionate about
+        cloud technologies, automation, and DevOps.  
+        This project was built to strengthen my AWS skills and demonstrate practical CI/CD knowledge.
+      </p>
+      <div class="links">
+        <a href="https://github.com/Arcanjo-jefferson" target="_blank">GitHub</a>
+        <a href="#" target="_blank">LinkedIn</a>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <p>© 2025 Jefferson Arcanjo. Hosted on AWS S3 | Automated with GitHub Actions.</p>
+  </footer>
 </body>
 </html>
