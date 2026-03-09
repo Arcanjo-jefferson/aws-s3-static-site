@@ -4,11 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AWS S3 Static Website with CI/CD | Jefferson Arcanjo</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <nav class="topnav">
+    <div class="brand"><a href="index.html">Jefferson Arcanjo</a></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="resume.pdf">Resume</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
   <header class="hero">
     <div class="overlay"></div>
     <div class="hero-content">
@@ -19,6 +29,26 @@
   </header>
 
   <main>
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <p>Some selected projects and demos I've built to practice cloud, automation and DevOps.</p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Static Site CI/CD</h3>
+          <p>Automatic deployment of a static website to AWS S3 using GitHub Actions.</p>
+        </div>
+        <div class="card">
+          <h3>Cloud Infrastructure Lab</h3>
+          <p>Hands-on experiments with IAM, S3, and the AWS CLI to learn secure deployments.</p>
+        </div>
+        <div class="card">
+          <h3>Automation Scripts</h3>
+          <p>Small tooling scripts to speed up repetitive dev tasks and deployments.</p>
+        </div>
+      </div>
+    </section>
+
     <section id="project" class="section">
       <h2>About the Project</h2>
       <p>
@@ -76,9 +106,13 @@
         cloud technologies, automation, and DevOps.  
         This project was built to strengthen my AWS skills and demonstrate practical CI/CD knowledge.
       </p>
-      <div class="links">
-        <a href="https://github.com/Arcanjo-jefferson" target="_blank">GitHub</a>
-        <a href="#" target="_blank">LinkedIn</a>
+      <div class="links social-icons">
+        <a href="https://github.com/Arcanjo-jefferson" target="_blank" aria-label="GitHub" title="GitHub">
+          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="social-icon-img" />
+        </a>
+        <a href="https://www.linkedin.com/in/jeffersonarcanjo/" target="_blank" aria-label="LinkedIn" title="LinkedIn">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="social-icon-img" />
+        </a>
       </div>
     </section>
   </main>
