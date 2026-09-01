@@ -1,83 +1,63 @@
-# AWS S3 Static Website 
+# Jefferson Arcanjo — Personal Website
 
-This project demonstrates hosting a static website on **Amazon S3** and later automating deployment with **GitHub Actions**.
+My personal / portfolio website: an "about me" for recruiters and hiring managers,
+covering my background, skills, experience, projects, education and contact details.
 
-## Current Phase
-- Phase 1: Manual deployment to S3
-- Phase 2: CI/CD automation (coming soon)
+It's also a working demo of a small DevOps pipeline — a static site hosted on
+**Amazon S3** and deployed automatically with **GitHub Actions** on every push to `main`.
 
-## Stack
-- HTML & CSS
-- AWS S3
-- AWS CLI
-- GitHub
+## 🌐 Live site
 
-## Live URL
-(Add the S3 website endpoint here# AWS S3 Static Website with CI/CD
+**[jefferson-static-site-2025.s3-website-eu-west-1.amazonaws.com](http://jefferson-static-site-2025.s3-website-eu-west-1.amazonaws.com)**
 
-This project demonstrates how to **host a static website on Amazon S3** and **automate deployments using GitHub Actions**.  
-Every time you push changes to the `main` branch, the site is automatically updated — no manual uploads required. 🚀
+## 🗂 Structure
 
-## 🌐 Live Demo
-Visit the deployed website here:  
-**[http://jefferson-static-site-2025.s3-website-eu-west-1.amazonaws.com](http://jefferson-static-site-2025.s3-website-eu-west-1.amazonaws.com)**
-
----
-
-## 📖 Project Overview
-This project started as a simple static website manually deployed to AWS S3.  
-It was later enhanced with a **CI/CD pipeline** that automatically syncs changes from GitHub to S3.
-
-### Features:
-- Static site hosted entirely on **AWS S3**
-- Secure IAM user with least privilege for deployments
-- **CI/CD pipeline** using GitHub Actions
-- Automatic deployments triggered by `git push`
-- Public bucket policy with restricted permissions
-
----
-
-## 🗂 Project Structure
-```aws-s3-static-site/
-├── website/ # Static site files
-│ ├── index.html
-│ └── style.css
-├── .github/
-│ └── workflows/
-│ └── deploy.yml # GitHub Actions workflow
-├── .gitignore
+```
+aws-s3-static-site/
+├── website/                 # Everything deployed to S3
+│   ├── index.html           # Single-page site (About, Skills, Experience, Projects, Education, Contact)
+│   ├── about.html           # Redirect → index.html#about (kept for old links)
+│   ├── projects.html        # Redirect → index.html#projects
+│   ├── contact.html         # Redirect → index.html#contact
+│   ├── 404.html             # Error page
+│   ├── robots.txt
+│   ├── favicon.svg
+│   ├── resume.pdf
+│   ├── css/style.css        # Light + dark theme, no build step
+│   └── js/main.js           # Theme toggle, mobile nav, scroll reveal
+├── .github/workflows/deploy.yml
 └── README.md
 ```
 
-> **Note:**  
-> Only the contents of the `website/` folder are deployed to AWS S3.
+> Only the contents of `website/` are deployed to S3.
 
----
+## 🛠 Built with
 
-## 🛠 Technologies Used
-| Technology        | Purpose |
-|-------------------|---------|
-| **AWS S3**        | Static website hosting |
-| **IAM**           | Secure permissions & credentials |
-| **AWS CLI**       | Manual bucket management & deployments |
-| **GitHub Actions**| Automating CI/CD pipeline |
-| **HTML / CSS**    | Website content |
+| Tech | Purpose |
+|------|---------|
+| HTML / CSS / vanilla JS | Site content, styling and behaviour (no framework, no build) |
+| AWS S3 | Static website hosting |
+| IAM | Least-privilege deploy user |
+| AWS CLI | `s3 sync` in the pipeline |
+| GitHub Actions | CI/CD — deploy on push to `main` |
 
----
+## 🚀 Deployment
 
-## 🚀 CI/CD Pipeline Overview
-The deployment workflow is fully automated:
+1. Push to `main`.
+2. GitHub Actions loads AWS credentials from repository secrets
+   (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`).
+3. `aws s3 sync website/ s3://jefferson-static-site-2025 --delete` publishes the site.
 
-1. **Push changes** to the `main` branch.
-2. GitHub Actions **runs the deploy workflow**:
-   - Loads AWS credentials securely from GitHub Secrets.
-   - Uses the AWS CLI to sync files to S3.
-3. **Live website updates automatically** — no manual steps required.
+## Working locally
 
-### Workflow File: `.github/workflows/deploy.yml`
+It's plain static files — open `website/index.html` in a browser, or serve the folder:
 
+```bash
+python3 -m http.server --directory website 8000
+```
 
-👤 Author:
-Jefferson Arcanjo
-Github: Arcanjo-jefferson
-Linkedln: https://www.linkedin.com/in/jeffersonarcanjo/
+## 👤 Author
+
+**Jefferson Arcanjo** — BSc (Hons) Computing & IT, CCT College Dublin · AWS Certified Cloud Practitioner
+GitHub: [Arcanjo-jefferson](https://github.com/Arcanjo-jefferson) ·
+LinkedIn: [jeffersonarcanjo](https://www.linkedin.com/in/jeffersonarcanjo/)

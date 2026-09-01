@@ -1,124 +1,349 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
+  <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AWS S3 Static Website with CI/CD | Jefferson Arcanjo</title>
+
+  <title>Jefferson Arcanjo — Cloud &amp; DevOps focused Computing student</title>
+  <meta name="description" content="Jefferson Arcanjo — final-year BSc (Hons) Computing &amp; IT student at CCT College Dublin and AWS Certified Cloud Practitioner. Cloud infrastructure, CI/CD and DevOps automation. Open to graduate and internship roles." />
+  <meta name="author" content="Jefferson Arcanjo" />
+  <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+
+  <link rel="canonical" href="http://jefferson-static-site-2025.s3-website-eu-west-1.amazonaws.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jefferson Arcanjo — Cloud &amp; DevOps focused Computing student" />
+  <meta property="og:description" content="Final-year BSc (Hons) Computing &amp; IT student at CCT College Dublin and AWS Certified Cloud Practitioner. Open to graduate and internship roles." />
+  <meta property="og:url" content="http://jefferson-static-site-2025.s3-website-eu-west-1.amazonaws.com/" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav class="topnav">
-    <div class="brand"><a href="index.html">Jefferson Arcanjo</a></div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="resume.pdf">Resume</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
-  <header class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>🚀 AWS S3 Static Website with CI/CD</h1>
-      <p>Created by <strong>Jefferson Arcanjo</strong></p>
-      <a href="#project" class="btn">Explore Project</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Jefferson Arcanjo — home">
+        <span class="brand-mark" aria-hidden="true">JA</span>
+        <span class="brand-name">Jefferson Arcanjo</span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-ghost btn-sm" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch colour theme" aria-pressed="false">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section id="projects" class="section">
-      <h2>Projects</h2>
-      <p>Some selected projects and demos I've built to practice cloud, automation and DevOps.</p>
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <p class="hero-status reveal">
+          <span class="dot" aria-hidden="true"></span>
+          Open to graduate &amp; internship roles — Dublin / Remote
+        </p>
+        <h1 id="hero-title" class="reveal">
+          Hi, I&rsquo;m Jefferson. I build and automate
+          <span class="accent">cloud infrastructure</span>.
+        </h1>
+        <p class="hero-lead reveal">
+          Final-year <strong>BSc (Hons) Computing &amp; IT</strong> student at CCT College Dublin
+          and <strong>AWS Certified Cloud Practitioner</strong>. I work with AWS, Linux, CI/CD
+          pipelines and DevOps automation, backed by years of hands-on troubleshooting in a
+          high-pressure operations role at Dublin Airport.
+        </p>
+        <div class="hero-cta reveal">
+          <a class="btn btn-primary" href="#projects">View projects</a>
+          <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download resume
+          </a>
+        </div>
+        <ul class="hero-links reveal" aria-label="Profiles">
+          <li>
+            <a href="https://github.com/Arcanjo-jefferson" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12 11.5 11.5 0 0 0 8.4 23c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/jeffersonarcanjo/" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33 0-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href="mailto:jefferson.arcanjo123@hotmail.com">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              Email
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-      <div class="cards">
-        <div class="card">
-          <h3>Static Site CI/CD</h3>
-          <p>Automatic deployment of a static website to AWS S3 using GitHub Actions.</p>
-        </div>
-        <div class="card">
-          <h3>Cloud Infrastructure Lab</h3>
-          <p>Hands-on experiments with IAM, S3, and the AWS CLI to learn secure deployments.</p>
-        </div>
-        <div class="card">
-          <h3>Automation Scripts</h3>
-          <p>Small tooling scripts to speed up repetitive dev tasks and deployments.</p>
+    <!-- About -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container">
+        <p class="kicker reveal">About</p>
+        <h2 id="about-title" class="reveal">Operations experience, meeting a cloud engineering path</h2>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              I&rsquo;m a final-year Computing &amp; IT student in Dublin, on track for a First Class
+              Honours degree. My focus is cloud infrastructure and DevOps &mdash; deploying
+              services on AWS, scripting with Python and Bash on Linux, and automating
+              deployments with CI/CD pipelines.
+            </p>
+            <p>
+              Alongside my studies I&rsquo;ve spent several years as a Duty Manager at Dublin
+              Airport, running shifts in a compliance-driven, high-volume environment. That role
+              is where I learned to diagnose enterprise system issues under pressure, weigh risk
+              and impact quickly, and explain technical problems clearly to both technical and
+              non-technical people.
+            </p>
+            <p>
+              I&rsquo;m now looking for a graduate or internship role where I can apply my cloud
+              certification and keep building &mdash; ideally in cloud, DevOps, platform or IT
+              infrastructure teams.
+            </p>
+          </div>
+          <ul class="about-facts reveal" aria-label="Quick facts">
+            <li><span>Based in</span><strong>Dublin, Ireland</strong></li>
+            <li><span>Studying</span><strong>BSc (Hons) Computing &amp; IT</strong></li>
+            <li><span>Graduating</span><strong>July 2027</strong></li>
+            <li><span>Certified</span><strong>AWS Cloud Practitioner</strong></li>
+            <li><span>Languages</span><strong>English (fluent), Portuguese (native)</strong></li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section id="project" class="section">
-      <h2>About the Project</h2>
-      <p>
-        This project demonstrates how to host and automate deployments of a static website on
-        <strong>Amazon S3</strong> using <strong>GitHub Actions</strong>.
-        Every time I push an update to GitHub, the website is automatically redeployed to AWS —
-        no manual uploads required.
-      </p>
-
-      <div class="cards">
-        <div class="card">
-          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968381.png" alt="AWS S3" />
-          <h3>Amazon S3</h3>
-          <p>Used for reliable, scalable static website hosting in the AWS Cloud.</p>
-        </div>
-        <div class="card">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png" alt="GitHub" />
-          <h3>GitHub Actions</h3>
-          <p>Implements a CI/CD pipeline that automatically syncs updates from GitHub to S3.</p>
-        </div>
-        <div class="card">
-          <img src="https://cdn-icons-png.flaticon.com/512/906/906343.png" alt="Security" />
-          <h3>Secure Setup</h3>
-          <p>IAM user credentials stored in GitHub Secrets — following AWS security best practices.</p>
+    <!-- Skills -->
+    <section id="skills" class="section section-alt" aria-labelledby="skills-title">
+      <div class="container">
+        <p class="kicker reveal">Skills</p>
+        <h2 id="skills-title" class="reveal">Tools &amp; technologies I work with</h2>
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <h3>Cloud &amp; DevOps</h3>
+            <ul class="tags">
+              <li>AWS (S3, IAM)</li>
+              <li>CI/CD pipelines</li>
+              <li>GitHub Actions</li>
+              <li>Infrastructure automation</li>
+              <li>Cloud fundamentals</li>
+            </ul>
+          </article>
+          <article class="skill-card reveal">
+            <h3>Languages &amp; scripting</h3>
+            <ul class="tags">
+              <li>Python</li>
+              <li>SQL</li>
+              <li>Bash / shell</li>
+              <li>HTML &amp; CSS</li>
+            </ul>
+          </article>
+          <article class="skill-card reveal">
+            <h3>Systems &amp; networking</h3>
+            <ul class="tags">
+              <li>Linux</li>
+              <li>TCP/IP</li>
+              <li>DNS</li>
+              <li>Operating systems</li>
+              <li>Databases</li>
+            </ul>
+          </article>
+          <article class="skill-card reveal">
+            <h3>Tooling &amp; practices</h3>
+            <ul class="tags">
+              <li>Git &amp; GitHub</li>
+              <li>AWS CLI</li>
+              <li>Version control workflows</li>
+              <li>Agile / software engineering</li>
+            </ul>
+          </article>
+          <article class="skill-card reveal">
+            <h3>Professional</h3>
+            <ul class="tags">
+              <li>Incident response</li>
+              <li>Technical troubleshooting</li>
+              <li>Stakeholder communication</li>
+              <li>Process improvement</li>
+              <li>Team collaboration</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="pipeline" class="section alt">
-      <h2>How the CI/CD Pipeline Works</h2>
-      <ol>
-        <li>💻 Code changes are pushed to the <strong>main</strong> branch on GitHub.</li>
-        <li>⚙️ GitHub Actions triggers a workflow that logs into AWS via IAM credentials.</li>
-        <li>☁️ Files from the <code>website/</code> folder are synced to the S3 bucket.</li>
-        <li>🌍 The new version of the website goes live automatically.</li>
-      </ol>
+    <!-- Experience -->
+    <section id="experience" class="section" aria-labelledby="experience-title">
+      <div class="container">
+        <p class="kicker reveal">Experience</p>
+        <h2 id="experience-title" class="reveal">Where I&rsquo;ve worked</h2>
+        <ol class="timeline">
+          <li class="timeline-item reveal">
+            <div class="timeline-head">
+              <h3>Duty Manager</h3>
+              <span class="timeline-meta">SSP UK &amp; Ireland &middot; Dublin Airport</span>
+              <span class="timeline-date">Jun 2022 &ndash; Present</span>
+            </div>
+            <ul class="bullets">
+              <li>Run day-to-day operations in a high-volume, compliance-driven environment, coordinating 12&ndash;18 staff per shift while keeping service and operational controls on track.</li>
+              <li>Operate and troubleshoot enterprise digital systems &mdash; Citrix, POS platforms, internal reporting tools and dashboards &mdash; building strong systems awareness and analytical habits.</li>
+              <li>Identify, investigate and resolve operational and technical issues in real time, assessing risk, impact and the right mitigation under pressure.</li>
+              <li>Drive process improvement: optimise workflows and cut disruption through better communication and coordination.</li>
+              <li>Train and onboard new team members, improving process consistency and knowledge sharing.</li>
+              <li>Work with multiple airport stakeholders, developing stakeholder-management and communication skills.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
     </section>
 
-    <section id="technologies" class="section">
-      <h2>Technologies Used</h2>
-      <ul class="tech-list">
-        <li>Amazon Web Services (S3, IAM)</li>
-        <li>GitHub Actions</li>
-        <li>HTML & CSS</li>
-        <li>AWS CLI</li>
-        <li>Cloud Security Best Practices</li>
-      </ul>
+    <!-- Projects -->
+    <section id="projects" class="section section-alt" aria-labelledby="projects-title">
+      <div class="container">
+        <p class="kicker reveal">Projects</p>
+        <h2 id="projects-title" class="reveal">Things I&rsquo;ve built</h2>
+
+        <article class="project reveal">
+          <div class="project-body">
+            <div class="project-top">
+              <h3>AWS S3 Static Website with CI/CD</h3>
+              <div class="project-links">
+                <a class="btn btn-ghost btn-sm" href="http://jefferson-static-site-2025.s3-website-eu-west-1.amazonaws.com" target="_blank" rel="noopener">Live site</a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/Arcanjo-jefferson/aws-s3-static-site" target="_blank" rel="noopener">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12 11.5 11.5 0 0 0 8.4 23c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+                  Code
+                </a>
+              </div>
+            </div>
+            <p>
+              This very site. A static website hosted on Amazon S3 with a fully automated
+              deployment pipeline &mdash; every push to <code>main</code> redeploys the site,
+              with no manual uploads.
+            </p>
+            <ul class="bullets">
+              <li>Configured and hosted a static site on AWS S3 with a scoped public bucket policy.</li>
+              <li>Created a least-privilege IAM user and stored its credentials as GitHub Secrets.</li>
+              <li>Built a GitHub Actions workflow that syncs the <code>website/</code> folder to S3 on every push.</li>
+              <li>Hands-on experience with cloud storage, IAM permissions and DevOps automation.</li>
+            </ul>
+            <ul class="tags">
+              <li>AWS S3</li>
+              <li>IAM</li>
+              <li>AWS CLI</li>
+              <li>GitHub Actions</li>
+              <li>CI/CD</li>
+              <li>HTML &amp; CSS</li>
+            </ul>
+          </div>
+        </article>
+
+        <a class="project project-more reveal" href="https://github.com/Arcanjo-jefferson" target="_blank" rel="noopener">
+          <div class="project-body">
+            <h3>More on GitHub &rarr;</h3>
+            <p>Coursework, lab work and smaller experiments with Python, Linux and cloud tooling live on my GitHub profile.</p>
+          </div>
+        </a>
+      </div>
     </section>
 
-    <section id="author" class="section alt">
-      <h2>About the Author</h2>
-      <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="GitHub Logo" class="profile" />
-      <p>
-        Hi, I’m <strong>Jefferson Arcanjo</strong> — a Computing & IT student passionate about
-        cloud technologies, automation, and DevOps.  
-        This project was built to strengthen my AWS skills and demonstrate practical CI/CD knowledge.
-      </p>
-      <div class="links social-icons">
-        <a href="https://github.com/Arcanjo-jefferson" target="_blank" aria-label="GitHub" title="GitHub">
-          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="social-icon-img" />
-        </a>
-        <a href="https://www.linkedin.com/in/jeffersonarcanjo/" target="_blank" aria-label="LinkedIn" title="LinkedIn">
-          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="social-icon-img" />
-        </a>
+    <!-- Education -->
+    <section id="education" class="section" aria-labelledby="education-title">
+      <div class="container">
+        <p class="kicker reveal">Education &amp; certifications</p>
+        <h2 id="education-title" class="reveal">Study &amp; credentials</h2>
+
+        <div class="edu-grid">
+          <article class="edu-card reveal">
+            <div class="timeline-head">
+              <h3>BSc (Hons) in Computing and IT</h3>
+              <span class="timeline-meta">CCT College Dublin</span>
+              <span class="timeline-date">Expected July 2027 &middot; On track for First Class Honours</span>
+            </div>
+            <p class="edu-label">Relevant coursework</p>
+            <ul class="tags">
+              <li>Networking</li>
+              <li>Operating Systems</li>
+              <li>Cloud Computing</li>
+              <li>Databases</li>
+              <li>System Analysis</li>
+              <li>Web Development</li>
+              <li>Software Engineering</li>
+              <li>Statistics</li>
+            </ul>
+          </article>
+
+          <article class="edu-card reveal">
+            <div class="timeline-head">
+              <h3>AWS Certified Cloud Practitioner</h3>
+              <span class="timeline-meta">Amazon Web Services</span>
+              <span class="timeline-date">Foundational cloud certification</span>
+            </div>
+            <p>
+              Validates a working understanding of AWS services, cloud economics, security and
+              the shared-responsibility model &mdash; the foundation I&rsquo;m building associate-level
+              skills on top of.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section section-alt" aria-labelledby="contact-title">
+      <div class="container contact-inner">
+        <p class="kicker reveal">Contact</p>
+        <h2 id="contact-title" class="reveal">Let&rsquo;s talk</h2>
+        <p class="contact-lead reveal">
+          I&rsquo;m open to graduate and internship opportunities in cloud, DevOps and IT
+          infrastructure. The fastest way to reach me is email.
+        </p>
+        <div class="contact-links reveal">
+          <a class="btn btn-primary" href="mailto:jefferson.arcanjo123@hotmail.com">jefferson.arcanjo123@hotmail.com</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/jeffersonarcanjo/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-ghost" href="https://github.com/Arcanjo-jefferson" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Jefferson Arcanjo. Hosted on AWS S3 | Automated with GitHub Actions.</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> Jefferson Arcanjo &middot; Dublin, Ireland</p>
+      <p class="footer-note">Built with plain HTML &amp; CSS. Hosted on AWS S3, deployed with GitHub Actions.</p>
+      <a class="back-to-top" href="#top">Back to top &uarr;</a>
+    </div>
   </footer>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>
