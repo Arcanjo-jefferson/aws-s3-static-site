@@ -3,7 +3,7 @@
 My personal / portfolio website: an "about me" for recruiters and hiring managers,
 covering my background, skills, experience, projects, education and contact details.
 
-It's also a working demo of a small DevOps pipeline — a static site hosted on
+It's also a working demo of a small DevOps pipeline, a static site hosted on
 **Amazon S3** and deployed automatically with **GitHub Actions** on every push to `main`.
 
 ## 🌐 Live site
