@@ -415,6 +415,7 @@ code {
   background: var(--accent);
   box-shadow: 0 0 0 4px var(--accent-soft);
 }
+.timeline-item + .timeline-item { margin-top: 2rem; }
 .timeline-head {
   display: flex;
   flex-wrap: wrap;
