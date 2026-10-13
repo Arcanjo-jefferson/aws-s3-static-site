@@ -3,12 +3,13 @@
 My personal / portfolio website: an "about me" for recruiters and hiring managers,
 covering my background, skills, experience, projects, education and contact details.
 
-It's also a working demo of a small DevOps pipeline, a static site hosted on
-**Amazon S3** and deployed automatically with **GitHub Actions** on every push to `main`.
+It's also a working demo of a small DevOps pipeline: static files stored in
+**Amazon S3**, served over **HTTPS through Amazon CloudFront**, and uploaded to S3
+automatically with **GitHub Actions** on every push to `main`.
 
 ## 🌐 Live site
 
-**[jefferson-static-site-2025.s3-website-eu-west-1.amazonaws.com](http://jefferson-static-site-2025.s3-website-eu-west-1.amazonaws.com)**
+**[d1sahnszekrzm.cloudfront.net](https://d1sahnszekrzm.cloudfront.net)**
 
 ## 🗂 Structure
 
@@ -36,7 +37,8 @@ aws-s3-static-site/
 | Tech | Purpose |
 |------|---------|
 | HTML / CSS / vanilla JS | Site content, styling and behaviour (no framework, no build) |
-| AWS S3 | Static website hosting |
+| AWS S3 | Stores the website files |
+| Amazon CloudFront | Delivers the website over HTTPS and caches content |
 | IAM | Least-privilege deploy user |
 | AWS CLI | `s3 sync` in the pipeline |
 | GitHub Actions | CI/CD — deploy on push to `main` |
@@ -46,7 +48,34 @@ aws-s3-static-site/
 1. Push to `main`.
 2. GitHub Actions loads AWS credentials from repository secrets
    (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`).
-3. `aws s3 sync website/ s3://jefferson-static-site-2025 --delete` publishes the site.
+3. The workflow uploads the website files with:
+
+   ```bash
+   aws s3 sync website/ s3://jefferson-static-site-2025 --delete --exclude ".DS_Store" --exclude ".git*"
+   ```
+
+4. CloudFront serves the files at the HTTPS address above. The current workflow
+   does not invalidate CloudFront's cache, so visitors may see a previous version
+   until cached files expire. To make an update visible promptly, create an
+   invalidation for `/*` in the CloudFront console after the S3 upload succeeds.
+
+## HTTPS hosting configuration
+
+- S3 bucket: `jefferson-static-site-2025` (Ireland, `eu-west-1`).
+- CloudFront distribution: `EAIS9UMZXD9S8`.
+- CloudFront domain: `d1sahnszekrzm.cloudfront.net`.
+- Default root object: `index.html`.
+- Viewer protocol policy: **Redirect HTTP to HTTPS**.
+- Origin: the regular S3 bucket endpoint, with **Origin Access Control (OAC)**
+  configured to sign requests.
+
+The bucket policy must allow this CloudFront distribution to read the objects.
+Once CloudFront access is verified, remove the public-read policy statement and
+turn on S3 Block Public Access. This restricts website reads to CloudFront while
+allowing the authorised GitHub Actions deployment user to continue uploading files.
+
+The old S3 website endpoint supports HTTP only. Use the CloudFront HTTPS address
+for shared links.
 
 ## Working locally
 
